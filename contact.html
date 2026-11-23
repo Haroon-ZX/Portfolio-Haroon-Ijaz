@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Haroon Ijaz — UX &amp; AI Researcher and Space &amp; Service Designer. Projects, research opportunities and collaborations.">
+  <title>Haroon Ijaz | Contact</title>
+
+  <!-- New Professional Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="contact-body">
+
+  <header id="header">
+    <div class="left-section">
+      <a class="logo" href="index.html">Haroon.</a>
+    </div>
+
+    <nav>
+      <a class="nav-item" href="index.html">Home</a>
+      <a class="nav-item" href="resume.html">Resume</a>
+      <a class="nav-item" href="projects.html">Projects</a>
+      <a class="nav-item" href="about.html">About</a>
+      <a class="nav-item active" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="contact-page">
+    <div class="contact-grid">
+
+      <!-- LEFT: intro + email -->
+      <div class="contact-main">
+        <span class="contact-eyebrow">Contact</span>
+        <h1 class="contact-title">Let's Connect</h1>
+
+        <p class="contact-lead">
+          Have a project, research opportunity or collaboration in mind? Let's talk.
+        </p>
+
+        <p class="contact-intro">
+          I'm always interested in connecting with people working on UX research, Artificial
+          Intelligence, service design, human-centred innovation and meaningful digital experiences.
+          Whether you have a project, an opportunity or simply an idea to discuss, feel free to reach out.
+        </p>
+
+        <div class="contact-email-block">
+          <span class="contact-label">Email</span>
+
+          <a class="contact-email" href="mailto:haroonijazahmed1@gmail.com">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <span>haroonijazahmed1@gmail.com</span>
+          </a>
+
+          <div class="cta contact-cta">
+            <a href="mailto:haroonijazahmed1@gmail.com" class="cta-1">
+              Send an Email
+            </a>
+            <button type="button" class="cta-2" id="copy-email-btn" data-email="haroonijazahmed1@gmail.com">
+              Copy Email
+            </button>
+          </div>
+
+          <p class="contact-copy-status" id="copy-status" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <!-- RIGHT: social -->
+      <aside class="contact-side">
+        <h2 class="contact-side-title">Find me online</h2>
+
+        <div class="contact-social">
+          <a class="contact-social-item" href="https://www.youtube.com/@trendsinpakistan163"
+            target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+          </a>
+
+          <a class="contact-social-item" href="https://www.linkedin.com/in/haroon-ijaz-/"
+            target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+
+          <a class="contact-social-item" href="https://x.com/92haroon_zx?s=11"
+            target="_blank" rel="noopener noreferrer" aria-label="X / Twitter" title="X / Twitter">
+            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+          </a>
+
+          <a class="contact-social-item" href="https://www.facebook.com/haroon.zx/"
+            target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+          </a>
+
+          <a class="contact-social-item" href="https://www.instagram.com/its_haroon_w0rld?bqrl=Z3BsOWVrbHBsbDdj&amp;utm_source=qr"
+            target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <p class="contact-side-note">
+          The quickest way to reach me is by email — I usually reply within a few days.
+        </p>
+      </aside>
+
+    </div>
+
+    <p class="contact-closing">"Good ideas begin with a conversation."</p>
+  </main>
+
+  <footer class="contact-footer">
+    <p>© 2026 Haroon Ijaz <i class="fa-solid fa-heart footer-heart" aria-hidden="true"></i></p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('copy-email-btn');
+      const status = document.getElementById('copy-status');
+      const email = btn.getAttribute('data-email');
+      let timer = null;
+
+      const showStatus = (message, isError) => {
+        status.textContent = message;
+        status.classList.toggle('is-error', Boolean(isError));
+        status.classList.add('is-visible');
+        clearTimeout(timer);
+        timer = setTimeout(() => status.classList.remove('is-visible'), 3200);
+      };
+
+      const copyFallback = () => {
+        const helper = document.createElement('textarea');
+        helper.value = email;
+        helper.setAttribute('readonly', '');
+        helper.style.position = 'fixed';
+        helper.style.top = '-1000px';
+        helper.style.opacity = '0';
+        document.body.appendChild(helper);
+        helper.select();
+        helper.setSelectionRange(0, helper.value.length);
+        let copied = false;
+        try {
+          copied = document.execCommand('copy');
+        } catch (err) {
+          copied = false;
+        }
+        document.body.removeChild(helper);
+        return copied;
+      };
+
+      btn.addEventListener('click', async () => {
+        let copied = false;
+
+        if (navigator.clipboard && window.isSecureContext) {
+          try {
+            await navigator.clipboard.writeText(email);
+            copied = true;
+          } catch (err) {
+            copied = false;
+          }
+        }
+
+        if (!copied) {
+          copied = copyFallback();
+        }
+
+        if (copied) {
+          showStatus('Email copied!', false);
+          btn.textContent = 'Copied!';
+          setTimeout(() => { btn.textContent = 'Copy Email'; }, 2200);
+        } else {
+          showStatus('Copy is blocked in this browser — please select the email manually.', true);
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

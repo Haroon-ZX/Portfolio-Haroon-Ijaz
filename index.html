@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haroon Ijaz</title>
+
+  <!-- New Professional Fonts (Outfit + Plus Jakarta Sans + Cormorant) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="home-bg">
+
+  <!-- header section -->
+  <header id="header">
+    <div class="left-section">
+      <a class="logo" href="index.html">Haroon.</a>
+    </div>
+
+    <nav>
+      <a class="nav-item active" href="index.html">Home</a>
+      <a class="nav-item" href="resume.html">Resume</a>
+      <a class="nav-item" href="projects.html">Projects</a>
+      <a class="nav-item" href="about.html">About</a>
+      <a class="nav-item" href="contact.html">Contact</a>
+    </nav>
+
+  </header>
+
+  <!-- Hero section -->
+  <section id="hero">
+    <div class="hero-left">
+      <div class="content">
+
+        <div class="hero-greeting-wrap">
+          <div class="typewriter" aria-live="polite">
+            <span id="typewriter-text"></span><span class="cursor" aria-hidden="true"></span>
+          </div>
+          <h1 class="hero-name">I'm Haroon Ijaz</h1>
+        </div>
+        <h3>UX & AI Researcher</h3>
+        <p>
+          I'm Haroon Ijaz, a multidisciplinary UX and AI researcher with a background in Computer Science and Space & Service Design. I combine human-centred research, artificial intelligence and creative problem-solving to explore meaningful solutions for real-world challenges.
+
+My experience includes AI-assisted co-creation workshops, healthcare communication research, service innovation and digital experiences. I believe technology should support human creativity, improve accessibility and make everyday experiences simpler and more meaningful.
+        </p>
+
+        <div class="cta">
+          <a href="projects.html" class="cta-1">Explore My Work</a>
+          <a href="contact.html" class="cta-2">Let's Connect</a>
+        </div>
+
+        <!-- 👇 Yahan Social Links Add Kiye Hain 👇 -->
+        <div class="social-icon">
+          <a href="https://www.facebook.com/haroon.zx/" target="_blank" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          
+          <a href="https://www.linkedin.com/in/haroon-ijaz-/" target="_blank" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          
+          <a href="https://x.com/92haroon_zx?s=11" target="_blank" aria-label="Twitter / X">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          
+          <a href="https://www.youtube.com/@trendsinpakistan163" target="_blank" aria-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          
+          <a href="https://www.tiktok.com/@har00nzx?_r=1&_t=ZG-9BPTHfZB9AO" target="_blank" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+        </div>
+        <!-- 👆 Social Links Khatam 👆 -->
+
+      </div>
+    </div>
+    <div class="hero-right"></div>
+  </section>
+
+  <script>
+    const greetingText = "Assalam-O-Alaikum!";
+    const typewriterText = document.getElementById("typewriter-text");
+    const heroName = document.querySelector(".hero-name");
+    const cursor = document.querySelector(".cursor");
+    let greetingIndex = 0;
+
+    function typeGreeting() {
+      typewriterText.textContent = greetingText.slice(0, greetingIndex);
+
+      if (greetingIndex < greetingText.length) {
+        greetingIndex += 1;
+        setTimeout(typeGreeting, 140);
+      } else {
+        setTimeout(() => {
+          cursor.style.opacity = "0";
+          heroName.classList.add("is-visible");
+        }, 260);
+      }
+    }
+
+    typeGreeting();
+  </script>
+<!-- CodeGenWeb 2024 -->
+</body>
+
+</html>
